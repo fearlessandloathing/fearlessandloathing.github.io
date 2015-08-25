@@ -1,5 +1,5 @@
 # fearlessandloathing.github.io
 
-Hopefully nobody gets on here before I get the chance tomorrow to populate these repos and say what's going to go on with F+L...
+I don't want to explain more than I need to. All I need to say right now is that F+L is evolving, and that I'm in no rush.
 
-If you're hear though you should also know that the info@fearlessandloathing.com email probably isn't working yet because propagation.
+For the next bit of time my plan is to keep chipping away at organizing all this.
