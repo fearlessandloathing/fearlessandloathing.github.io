@@ -1,0 +1,98 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Color variables
+
+$red:     rgb(207, 0, 15);
+$orange:  rgb(248, 148, 6); 
+$yellow:  rgb(247, 202, 24);
+$green:   rgb(38, 166, 91);
+$blue:    rgb(34, 167, 240);
+$purple:  rgb(102, 51, 153);
+$grey:    rgb(171, 183, 183);
+
+$red-light:     lighten($red, 40%);
+$orange-light:  lighten($orange, 40%);
+$yellow-light:  lighten($yellow, 40%);
+$green-light:   lighten($green, 40%);
+$blue-light:    lighten($blue, 40%);
+$purple-light:  lighten($purple, 40%);
+$grey-light:    lighten($grey, 40%);
+
+$red-dark:      darken($red, 10%);
+$orange-dark:   darken($orange, 10%);
+$yellow-dark:   darken($yellow, 10%);
+$green-dark:    darken($green, 10%);
+$blue-dark:     darken($blue, 10%);
+$purple-dark:   darken($purple, 10%);
+$grey-dark:     darken($grey, 10%);
+
+$background-color: white;
+$brand-color:      $red;
+
+// Random (figure out more descriptive name later
+
+$scaling-unit:        1;
+
+// Typography variables
+$base-font-size:      1em;
+$small-font-size:     $base-font-size * 0.875;
+$base-line-height:    1.5;
+$condensed-spacing:      -($base-font-size * .025);
+$expanded-spacing:       $base-font-size * .05;
+
+$base-font-family:    sans-serif;
+$base-font-weight:    normal;
+$base-font-color:     black;
+
+$heading-font-family:  sans-serif;
+$heading-font-weight:  bold;
+$heading-font-color:   $brand-color;
+
+$link-color: black;
+$link-visited-color:  $red-dark;
+$link-hover-color:    $red;
+
+$spacing-unit:        $base-font-size * 1.5;
+
+
+
+// Width of the content area
+$content-width:     100%;
+
+// Device breakpoints
+$small:             35.5em;
+$medium:            48em;
+$large:             64em;
+$xlarge:            80em;
+$huge:              100em;
+
+
+
+
+// Using media queries with like this:
+// @include media-query($large) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (min-width: $device) {
+        @content;
+    }
+}
+
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "normalize",
+        "susy",
+        "base",
+        "layout",
+        "components",
+        "syntax-highlighting"
+;

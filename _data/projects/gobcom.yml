@@ -1,0 +1,15 @@
+---
+title: Gobcom
+short_description: This is going to be a login required forum for the Oberlin community. 
+long_description: #can this be a link to a markdown file??
+
+#can we handle members as references to a "people.yml"??
+members:
+ - name: David Clark
+   role: Manager
+ - name: Andrew Amis
+   role: Lead Developer
+   
+github: http://github.com
+trello: https://trello.com/b/QqhgOy39/forum-fearlessandloathing-com
+google: https://docs.google.com/document/d/1dfped-SO2ehxIq0xB1ND8Z-wsE9PEtQYWwVkBf9X5Ik/edit?usp=sharing

@@ -1,0 +1,268 @@
+/************
+* Debugging *
+************/
+
+body * {
+ //outline: 1px solid red; 
+}
+
+
+/****************
+* Basic styling *
+****************/
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight: 300;
+  color: $base-font-color;
+  background-color: $background-color;
+  -webkit-text-size-adjust: 100%;
+}
+
+/*************
+* Typography *
+*************/
+
+// Headings
+
+h1, h2, h3, 
+h4, h5, h6 {
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  color: $heading-font-color;
+  letter-spacing: $condensed-spacing;
+}
+
+h1 {
+  font-size: $base-font-size + ($scaling-unit * 2);
+}
+
+h2 {
+  font-size: $base-font-size + ($scaling-unit * 1.75);
+  
+}
+
+h3 {
+  font-size: $base-font-size + ($scaling-unit * 1.5);
+}
+
+h4 {
+  font-size: $base-font-size + ($scaling-unit * 1.25);
+}
+
+h5 {
+  font-size: $base-font-size + ($scaling-unit * 1);
+}
+
+h6 {
+  font-size: $base-font-size + ($scaling-unit * .75);
+}
+
+// Paragraphs 
+
+p {
+ margin: ($base-line-height / 2) 0em; 
+}
+
+// Inline
+
+a {
+  
+  color: $link-color;
+  text-decoration: underline;
+  text-transform: uppercase;
+  
+  &:visited {
+    color: $link-visited-color;
+  }
+  
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: none;
+  }
+}
+
+strong, b {
+ font-weight: bold; 
+}
+
+em, i {
+ font-style: italic; 
+}
+
+u {
+ text-decoration: underline; 
+}
+
+abbr {
+ border-bottom: ($base-font-size / 16) solid $base-font-color; 
+}
+
+q {
+  &:before { 
+   content: '"'; 
+  }
+  &:after { 
+    content: '"'; 
+  }
+}
+
+sub, sup {
+  font-size: $small-font-size;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+ top: -($base-font-size * .5); 
+}
+
+sub {
+  top: $base-font-size * .5; 
+}
+
+// Lists
+
+ul, ol {
+  margin-left: $spacing-unit;
+}
+
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+}
+
+// Blockquotes
+
+blockquote {
+  color: lighten($base-font-color, 5%);
+  border-left: ($spacing-unit * .1) solid $brand-color;
+  padding-left: $spacing-unit / 2;
+  font-size: $base-font-size + ($scaling-unit * .5);
+  margin: ($base-line-height / 2) 0em; 
+  
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Code formatting
+
+pre,
+code {
+  font-size: $base-font-size;
+  border: ($base-font-size * .05) solid $grey;
+  background-color: $grey-light;
+}
+
+code {
+  padding: ($base-font-size * .1) ($base-font-size * .3);
+}
+
+pre {
+  padding: ($base-font-size * .5) ($base-font-size * .75);
+  overflow-x: scroll;
+  
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+/**
+ * Images
+ */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/**
+ * Figures
+ */
+figure > img {
+    display: block;
+}
+
+figcaption {
+    font-size: $small-font-size;
+}
+
+/*****************
+* Helper classes *
+*****************/
+
+.wrapper {
+  padding: $spacing-unit;
+  
+  @extend %clearfix;
+
+    @include media-query($large) {
+        padding: $spacing-unit / 2;
+    }
+}
+
+%clearfix {
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.icon {
+
+    > svg {
+        display: inline-block;
+        width: $base-font-size;
+        height: $base-font-size;
+        vertical-align: middle;
+
+        path {
+            fill: $grey;
+        }
+    }
+}
+
+.nobreak {
+  white-space: pre;
+}
+
+// Alignment
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+.text-nowrap         { white-space: nowrap; }
+
+// Transformation
+.text-lowercase      { text-transform: lowercase; }
+.text-uppercase      { text-transform: uppercase; }
+.text-capitalize     { text-transform: capitalize; }
+
+
+// Work this to own suiting
+.lead {
+  margin-bottom: $base-line-height;
+  font-size: floor(($base-font-size * 1.15));
+  font-weight: 300;
+  line-height: 1.75;
+  
+  @media (min-width: $small) {
+    font-size: ($base-font-size * 1.5);
+  }
+}
+
+// NEED FORMS!!! BUTTONS!!! ALERTS!!! 

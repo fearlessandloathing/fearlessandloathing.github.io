@@ -1,0 +1,237 @@
+/*
+mixin potentials
+
+border-top: ($base-font-size / 8) solid black;
+border-left: ($base-font-size / 8) solid black;
+border-right: ($base-font-size / 4) solid black;
+border-bottom: ($base-font-size / 4) solid black;
+
+*/
+
+// SUSY SETTINGS
+/* Changing Susy default global settings */
+$susy: (
+  /* Tells Susy to use 12 columns */
+  columns: 12,
+  /* Tells Susy that the container has a max-width of 1120px */
+  container: 100%,
+  /* Tells Susy to use border-box */
+  global-box-sizing: border-box 
+);
+
+/* Makes border-box properties */
+@include border-box-sizing;
+
+// GRID
+.grid {
+  width: 100%;
+ @include container; 
+
+}
+
+/*
+ < article>       *
+  <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+  <p>by <a href="#">David Edward Clark</a> posted to <a href="#">News</a> <span>{{ post.date | date: "%b %-d, %Y" }}</span></p>
+  <imgsrc="{{ post.image }}"  />
+  <p>{{ post.content | strip_html | truncatewords: 40 }}</p>
+  <a href="{{ post.url }}">Continue reading</a>
+ </article>
+ */
+
+// FEEDS
+
+.feed {
+  width: 100%;
+  //outline: 1px solid black;
+  
+  article {
+    max-width: 60em;
+    margin: 0em auto $spacing-unit auto;
+    padding: $spacing-unit / 2;
+    //margin-bottom: $spacing-unit; 
+    //outline: 1px solid red;
+    overflow: hidden;
+    
+    & p:first-of-type {
+      margin-top: $spacing-unit / 4;
+      overflow: hidden;
+    }
+    
+    & p span:last-of-type {
+      float: right;
+      font-style: italic
+    }
+    
+    & > a {
+      float: right;
+      font-weight: bold;
+    }
+  }
+  
+  h2 {
+    //background-color: $blue;
+    margin: -($spacing-unit / 2);
+    padding: ($spacing-unit / 2);
+    line-height: 1em;
+  }
+  
+  img {
+    float: left;
+    width: auto;
+    height: auto;
+    max-width: 10em;
+    max-height: 10em;
+    //margin-top: $spacing-unit / 2;
+    padding-right: $spacing-unit / 2;
+  }
+}
+
+/*
+ < article>       *
+  <h2><a href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a></h2>
+  <p><a href="#">David Edward Clark</a>, <a href="#">Andrew Amis</a> (Project leaders)</p>
+  <!--<img src="{{ post.image }}"  />-->
+  <p>{{ project.short_description }}</p>
+  <a href="{{ project.url }}">Learn more</a>
+ </article>
+
+*/
+
+.feed.compressed {
+  
+  article {
+    
+    & p {
+      margin: ($spacing-unit / 4) 0em;
+      overflow: hidden;
+      //display: inline;
+      
+      &:last-of-type:before {
+        //content: " - ";
+      }
+    }
+
+    
+    & p span:last-of-type {
+      float: none;
+      font-style: italic
+    }
+    
+    & > a {
+      float: right;
+      font-weight: bold;
+    }
+  }
+  
+  h2 {
+    background-color: transparent;
+    font-size: $base-font-size * 2;
+    margin: 0em;
+    padding: 0em;
+    line-height: 1em;
+  }
+  
+  img:not(& .member) {
+    display: none;
+  }
+}
+
+// CARDS
+
+.project-forum {
+  background: url('../images/logos/project-forum.svg'); 
+}
+.project-archive {
+  background: url('../images/logos/project-archive.svg');
+}
+.project-data {
+  background: url('../images/logos/project-data.svg');
+}
+
+.cards {
+  article {
+    @include span(12 of 12);
+    border: ($base-font-size / 16) solid black;
+    //box-shadow: 2px 2px 0px black;
+
+    background-color: white;
+    
+    @include media-query($medium) {
+      & { 
+        @include gallery(6 of 12)
+      }
+    }
+    
+    @include media-query($large) {
+      & {
+        @include gallery(4 of 12)
+      }
+    }
+  }
+  
+  div {
+    height: 10em;
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: red;
+    border-bottom: ($base-font-size / 16) solid black;
+    
+    h2 {
+      margin: auto 0em;
+      padding-left: .25em;
+      color: white;
+    }
+  }
+  
+  p {
+    margin: $spacing-unit / 2;  
+  }
+  
+  ul {
+    list-style: none;
+    display: block;
+    margin: 0em auto;
+    padding: 0em;
+    
+    li {
+      display: block;
+      float: left;
+      text-align: center;
+      padding: ($spacing-unit / 2);
+      margin: 0em auto;
+    }
+  }
+}
+
+// BUTTONS
+
+.button {
+  background:transparent;
+  border: ($base-font-size / 16) solid black;
+
+  color: rgb(0,0,0);
+  display: block;
+  position: relative;
+
+  padding: $spacing-unit / 2;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center; }
+
+.button:hover {
+      background-color: rgba(158,158,158, 0.20); }
+      
+.button.colored {
+            color: rgb(63,81,181); }
+
+.button.raised {
+                  background: rgba(158,158,158, 0.20);
+                  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+
+.button.raised.colored {
+                        background: rgb(63,81,181);
+                        color: rgb(255,255,255); }
+                      

@@ -1,0 +1,90 @@
+---
+layout: page
+---
+
+<div class="page">
+  <div class="wrapper">
+    <div class="feed compressed">
+      {% for project in site.projects %}
+      <article>
+          <h2><a href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a></h2>
+          <p><a href="#">David Edward Clark</a>, <a href="#">Andrew Amis</a> (Project leaders)</p>
+          <!--<img src="{{ post.image }}"  />-->
+          <p>{{ project.short_description }}</p>
+          <a href="{{ project.url }}">Learn more</a>
+      </article>
+      {% endfor %}
+    </div>
+  
+  
+    <div class="feed">
+      {% for post in site.posts %}
+      <article>
+          <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+          <p><strong>by <a href="#">David Edward Clark</a> posted to <a href="#">News</a> <span>{{ post.date | date: "%b %-d, %Y" }}</span></strong></p>
+          <img src="{{ post.image }}"  />
+          <p>{{ post.content | strip_html | truncatewords: 40 }}</p>
+          <a href="{{ post.url }}">Continue reading</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+    
+    <!--
+          <article class="card">
+        <div class="title">
+          <h2 class="title-text">Card</h2>
+        </div>
+        <p class="supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...</p>
+        <ul class="actions">
+          <li><a class="button raised">Use</a></li>
+          <li><a class="button raised colored">Contribute</a></li>
+        </ul>
+      </article> 
+      
+      <article class="card">
+        <div class="title">
+          <h2 class="title-text">Card</h2>
+        </div>
+        <p class="supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...</p>
+        <ul class="actions">
+          <li><a class="button raised">Use</a></li>
+          <li><a class="button raised colored">Contribute</a></li>
+        </ul>
+      </article> 
+    
+    
+    
+    <article class="wide card">
+      <div class="title">
+        <h2 class="title-text">Wide Card</h2>
+      </div>
+      <p class="supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...</p>
+      <ul class="actions">
+        <li><a class="button raised">Use</a></li>
+        <li><a class="button raised colored">Contribute</a></li>
+      </ul>
+    </article> 
+    
+    <article class="tall card">
+      <div class="title">
+        <h2 class="title-text">Tall Card</h2>
+      </div>
+      <p class="supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...</p>
+      <ul class="actions">
+        <li><a class="button raised">Use</a></li>
+        <li><a class="button raised colored">Contribute</a></li>
+      </ul>
+    </article> 
+    
+    <article class="tall wide card">
+      <div class="title">
+        <h2 class="title-text">Tall Wide Card</h2>
+      </div>
+      <p class="supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...</p>
+      <ul class="actions">
+        <li><a class="button raised">Use</a></li>
+        <li><a class="button raised colored">Contribute</a></li>
+      </ul>
+    </article>-->

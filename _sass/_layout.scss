@@ -1,0 +1,357 @@
+/**
+ * Site header
+ */
+.site-header {
+  overflow: hidden;
+  margin: 0em;
+  border-bottom: $spacing-unit solid $red;
+  
+  .wrapper {
+    padding: ($spacing-unit / 4) ($spacing-unit / 2);
+  }
+  
+  //@include span(2);
+  
+  // Positioning context for the mobile navigation icon
+  //position: relative;
+}
+
+.site-title {
+  margin: 0em;
+  padding: 0em;
+  line-height: 1;
+  float: left;
+  
+  a {
+    line-height: 1;
+    margin: 0em;
+    padding: 0em;
+  }
+  
+  &,
+  &:visited {
+    //color: $grey-color-dark;
+  }
+}
+
+.site-nav ul {
+  clear: right;
+  float: right;
+  margin: 0em;
+  padding:0em;
+  
+  .menu-icon {
+    //display: none;
+  }
+  
+  .page-link {
+    color: $base-font-color;
+    line-height: $base-line-height;
+    float: left;
+    text-decoration: none;
+    list-style: none;
+    
+    
+    // Gaps between nav items, but not on the first one
+    &:not(:first-child) {
+      margin-left: $spacing-unit / 2;
+    }
+  }
+  
+  @include media-query($small) {
+    //position: absolute;
+    //top: 9px;
+    //right: 30px;
+    //background-color: $background-color;
+    //border: 1px solid $grey-color-light;
+    //border-radius: 5px;
+    //text-align: right;
+    
+    .menu-icon {
+      //display: block;
+      //float: right;
+      //width: 36px;
+      //height: 26px;
+      //line-height: 0;
+      //padding-top: 10px;
+      //text-align: center;
+      
+      > svg {
+        //width: 18px;
+        //height: 15px;
+        
+        path {
+          //fill: $grey-color-dark;
+        }
+      }
+    }
+    
+    .trigger {
+      //clear: both;
+      //display: none;
+    }
+    
+    &:hover .trigger {
+      //display: block;
+      //padding-bottom: 5px;
+    }
+    
+    .page-link {
+      //display: block;
+      //padding: 5px 10px;
+    }
+  }
+}
+
+.header-site-description {
+  //clear: left;
+  float: right; 
+  margin: 0em;
+}
+
+
+
+/**
+ * Site footer
+ */
+.site-footer {
+  //border-top: 1px solid $grey-color-light;
+  //padding: $spacing-unit 0;
+}
+
+.footer-heading {
+  //margin-bottom: $spacing-unit / 2;
+}
+
+.contact-list,
+.social-media-list {
+  //list-style: none;
+  //margin-left: 0;
+}
+
+.footer-col-wrapper {
+  //color: $grey-color;
+  //margin-left: -$spacing-unit / 2;
+  //@extend %clearfix;
+}
+
+.footer-col {
+  //float: left;
+  //margin-bottom: $spacing-unit / 2;
+  //padding-left: $spacing-unit / 2;
+}
+
+.footer-col-1 {
+  //width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+  //width:         calc(35% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-2 {
+  //width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+  //width:         calc(20% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-3 {
+  //width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+  //width:         calc(45% - (#{$spacing-unit} / 2));
+}
+
+@include media-query($large) {
+  .footer-col-1,
+  .footer-col-2 {
+    //width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+    //width:         calc(50% - (#{$spacing-unit} / 2));
+  }
+  
+  .footer-col-3 {
+    //width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    //width:         calc(100% - (#{$spacing-unit} / 2));
+  }
+}
+
+@include media-query($small) {
+  .footer-col {
+    //float: none;
+    //width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    //width:         calc(100% - (#{$spacing-unit} / 2));
+  }
+}
+
+
+
+/**
+ * Page content
+ */
+.page-content, 
+.page-content > div {
+  height: 100%;
+}
+
+.page-content > .home {
+ padding: 0em; 
+}
+
+.page-content > div {
+ padding: $spacing-unit; 
+}
+
+.page-heading {
+}
+
+.post-list {
+  //margin-left: 0;
+  //list-style: none;
+  
+  > li {
+    //margin-bottom: $spacing-unit;
+  }
+}
+
+.post-meta {
+  //font-size: $small-font-size;
+  //color: $grey-color;
+}
+
+.post-link {
+  //display: block;
+}
+
+.background {
+  background-color: $blue; 
+}
+
+
+/**
+ * Posts
+ */
+.post-header {
+  //margin-bottom: $spacing-unit;
+}
+
+.post-title {
+  //font-size: 42px;
+  //letter-spacing: -1px;
+  //line-height: 1;
+  
+  @include media-query($large) {
+    //font-size: 36px;
+  }
+}
+
+.post-content {
+  //margin-bottom: $spacing-unit;
+  
+  h2 {
+    //font-size: 32px;
+    
+    @include media-query($large) {
+      //font-size: 28px;
+    }
+  }
+  
+  h3 {
+    //font-size: 26px;
+    
+    @include media-query($large) {
+      //font-size: 22px;
+    }
+  }
+  
+  h4 {
+    //font-size: 20px;
+    
+    @include media-query($large) {
+      //font-size: 18px;
+    }
+  }
+}
+
+
+/***********
+ * HOMEPAGE *
+ ************/ 
+
+.site-header.homepage {
+  width: 100%;
+  position: absolute;
+  top: 0%;
+  left:0%;
+  background-color: rgba(255,255,255,.8);
+  z-index: 100;
+}
+
+.homepage-bg {
+  
+}
+
+
+
+.full-height {
+  border-bottom: $spacing-unit solid $red;
+  background-image: url(../images/rainbow-couches.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  
+  .wrapper {
+    background-color: rgba(255,255,255,.8);
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    //text-align: right;
+    float: right;
+    
+  }
+  
+  h1 {
+    font-size: $base-font-size * 5;
+    margin: 0em;
+    padding: 0em;
+    line-height: 1;
+  }
+  
+  h2 {
+    font-size: $base-font-size * 2;
+    margin: 0em;
+    padding: 0em;
+  }
+  
+  p {
+    font-size: $base-font-size * 2.5;
+    margin: 0em;
+    padding: 0em;
+    line-height: 1;
+  }
+}
+
+.projects-list {
+  @include container;
+  padding: $spacing-unit;
+  background-color: $blue;
+  
+  
+  & > div:first-of-type {
+    @include span(12 of 12);
+    background-color: $blue;
+    
+    @include media-query($large) {
+      @include gallery(8 of 12);
+    }
+  }
+  
+  & > div:last-of-type {
+    @include span(12 of 12);
+    background-color: $blue;
+    
+    @include media-query($large) {
+      @include gallery(4 of 12);
+    }
+    
+  }
+}
